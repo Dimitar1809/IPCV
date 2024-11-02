@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 import glob
+import open3d as o3d
+
 
 CHECKERBOARD = (9, 6)
 SQUARE_SIZE = 0.01  # Square size in meters (10 mm)
@@ -88,8 +90,9 @@ baseline_middle_right = np.linalg.norm(T_middle_right)
 print(f"Baseline (distance between Middle and Right): {baseline_middle_right} meters")
 
 
+
 # Rectify the stereo images (first left and middle)
-# Load the new pair of stereo images 
+# Load the pair of stereo images 
 img_left = cv2.imread('SubjectPictures/subject1/subject1Left/subject1_Left_1.jpg')
 img_right = cv2.imread('SubjectPictures/subject1/subject1Middle/subject1_Middle_1.jpg')
 
@@ -100,7 +103,7 @@ image_shape = img_left.shape[:2][::-1]  # (width, height)
 # Step 1: Stereo Rectification
 # Compute the rectification transforms
 R1, R2, P1, P2, Q, validPixROI1, validPixROI2 = cv2.stereoRectify(
-    mtx_left, dist_left, mtx_right, dist_right, image_shape, R_left_middle, T_left_middle, flags=cv2.CALIB_ZERO_DISPARITY, alpha=0
+    mtx_left, dist_left, mtx_right, dist_right, image_shape, R_left_middle, T_left_middle, flags=cv2.CALIB_ZERO_DISPARITY, alpha=-0.5
 )
 
 # Step 2: Compute Rectification Maps
@@ -111,11 +114,18 @@ map1_right, map2_right = cv2.initUndistortRectifyMap(mtx_right, dist_right, R2, 
 # Step 3: Apply Rectification Maps
 # Remap the images to their rectified versions
 rectified_left = cv2.remap(img_left, map1_left, map2_left, cv2.INTER_LINEAR)
-rectified_right = cv2.remap(img_right, map1_right, map2_right, cv2.INTER_LINEAR)
+rectified_middle = cv2.remap(img_right, map1_right, map2_right, cv2.INTER_LINEAR)
 
 # Step 4: Display the Rectified Images
 # Display them side by side to see if the rows are aligned
 cv2.imshow('Rectified Left', rectified_left)
-cv2.imshow('Rectified Right', rectified_right)
+cv2.imshow('Rectified M', rectified_middle)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+# Save the rectified images for further processing
+cv2.imwrite('rectified_left.jpg', rectified_left)
+cv2.imwrite('rectified_middle.jpg', rectified_middle)
+# Save the stereo calibration parameters
+np.savez('stereo_calibration_dataLM.npz', mtx_left=mtx_left, dist_left=dist_left, 
+         mtx_right=mtx_right, dist_right=dist_right, R=R_left_middle, T=T_left_middle, Q=Q)
