@@ -291,35 +291,35 @@ color_normalization_folder("IPCV/SubjectPicturesProcessed/subject1/subject1Right
 # Subject 2 Left
 intrinsicMatrixL2, distortionMatrixL2 = calibrate_camera_intrinsic(9, 6, "IPCV/CalibrationPictures/Calibratie 1/calibrationLeft/*.jpg")
 undistort_images_in_folder("IPCV/SubjectPictures/subject2/subject2_Left", "IPCV/SubjectPicturesUndistorted/subject2/subject2Left", intrinsicMatrixL2, distortionMatrixL2)
-remove_background_folder("IPCV/SubjectPicturesUndistorted/subject2/subject2Left", "IPCV/SubjectPicturesProcessed/subject2/subject2Left", 8, 13)
+remove_background_folder("IPCV/SubjectPicturesUndistorted/subject2/subject2Left", "IPCV/SubjectPicturesProcessed/subject2/subject2Left", 6, 75)
 color_normalization_folder("IPCV/SubjectPicturesProcessed/subject2/subject2Left", "IPCV/SubjectPicturesNormalized/subject2/subject2Left")
 
 # Subject 2 Middle
 intrinsicMatrixM2, distortionMatrixM2 = calibrate_camera_intrinsic(9, 6, "IPCV/CalibrationPictures/Calibratie 1/calibrationMiddle/*.jpg")
 undistort_images_in_folder("IPCV/SubjectPictures/subject2/subject2_Middle", "IPCV/SubjectPicturesUndistorted/subject2/subject2Middle", intrinsicMatrixM2, distortionMatrixM2)
-remove_background_folder("IPCV/SubjectPicturesUndistorted/subject2/subject2Middle", "IPCV/SubjectPicturesProcessed/subject2/subject2Middle", 17, 20)
+remove_background_folder("IPCV/SubjectPicturesUndistorted/subject2/subject2Middle", "IPCV/SubjectPicturesProcessed/subject2/subject2Middle", 6, 75)
 color_normalization_folder("IPCV/SubjectPicturesProcessed/subject2/subject2Middle", "IPCV/SubjectPicturesNormalized/subject2/subject2Middle")
 
 # Subject 2 Right
 intrinsicMatrixR2, distortionMatrixR2 = calibrate_camera_intrinsic(9, 6, "IPCV/CalibrationPictures/Calibratie 1/calibrationRight/*.jpg")
 undistort_images_in_folder("IPCV/SubjectPictures/subject2/subject2_Right", "IPCV/SubjectPicturesUndistorted/subject2/subject2Right", intrinsicMatrixR2, distortionMatrixR2)
-remove_background_folder("IPCV/SubjectPicturesUndistorted/subject2/subject2Right", "IPCV/SubjectPicturesProcessed/subject2/subject2Right", 15, 200)
+remove_background_folder("IPCV/SubjectPicturesUndistorted/subject2/subject2Right", "IPCV/SubjectPicturesProcessed/subject2/subject2Right", 6, 75)
 color_normalization_folder("IPCV/SubjectPicturesProcessed/subject2/subject2Right", "IPCV/SubjectPicturesNormalized/subject2/subject2Right")
 
 # Subject 4 Left
 intrinsicMatrixL4, distortionMatrixL4 = calibrate_camera_intrinsic(9, 6, "IPCV/CalibrationPictures/Calibratie 1/calibrationLeft/*.jpg")
 undistort_images_in_folder("IPCV/SubjectPictures/subject4/subject4_Left", "IPCV/SubjectPicturesUndistorted/subject4/subject4Left", intrinsicMatrixL4, distortionMatrixL4)
-remove_background_folder("IPCV/SubjectPicturesUndistorted/subject4/subject4Left", "IPCV/SubjectPicturesProcessed/subject4/subject4Left", 20, 150)
+remove_background_folder("IPCV/SubjectPicturesUndistorted/subject4/subject4Left", "IPCV/SubjectPicturesProcessed/subject4/subject4Left", 6, 12)
 color_normalization_folder("IPCV/SubjectPicturesProcessed/subject4/subject4Left", "IPCV/SubjectPicturesNormalized/subject4/subject4Left")
 
 # Subject 4 Middle
 intrinsicMatrixM4, distortionMatrixM4 = calibrate_camera_intrinsic(9, 6, "IPCV/CalibrationPictures/Calibratie 1/calibrationMiddle/*.jpg")
 undistort_images_in_folder("IPCV/SubjectPictures/subject4/subject4_Middle", "IPCV/SubjectPicturesUndistorted/subject4/subject4Middle", intrinsicMatrixM4, distortionMatrixM4)
-remove_background_folder("IPCV/SubjectPicturesUndistorted/subject4/subject4Middle", "IPCV/SubjectPicturesProcessed/subject4/subject4Middle", 20, 150)
+remove_background_folder("IPCV/SubjectPicturesUndistorted/subject4/subject4Middle", "IPCV/SubjectPicturesProcessed/subject4/subject4Middle", 6, 12)
 color_normalization_folder("IPCV/SubjectPicturesProcessed/subject4/subject4Middle", "IPCV/SubjectPicturesNormalized/subject4/subject4Middle")
 
 # Subject 4 Right
 intrinsicMatrixR4, distortionMatrixR4 = calibrate_camera_intrinsic(9, 6, "IPCV/CalibrationPictures/Calibratie 1/calibrationRight/*.jpg")
 undistort_images_in_folder("IPCV/SubjectPictures/subject4/subject4_Right", "IPCV/SubjectPicturesUndistorted/subject4/subject4Right", intrinsicMatrixR4, distortionMatrixR4)
-remove_background_folder("IPCV/SubjectPicturesUndistorted/subject4/subject4Right", "IPCV/SubjectPicturesProcessed/subject4/subject4Right", 20, 150)
+remove_background_folder("IPCV/SubjectPicturesUndistorted/subject4/subject4Right", "IPCV/SubjectPicturesProcessed/subject4/subject4Right", 6, 12)
 color_normalization_folder("IPCV/SubjectPicturesProcessed/subject4/subject4Right", "IPCV/SubjectPicturesNormalized/subject4/subject4Right")
