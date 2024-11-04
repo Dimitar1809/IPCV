@@ -74,7 +74,7 @@ foreground = imreconstruct(seed,foreground);
 
 output_image = I;
 for i = 1:size(I, 3)  % Loop over color channels
-    output_image(:, :, i) = I(:, :, i) .* uint8(foreground);
+    output_image(:, :, i) = I(:, :, i) .* double(foreground);
 end
 
 figure; imshow(output_image); title('Image with Background Removed');
